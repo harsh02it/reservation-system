@@ -51,7 +51,7 @@ WSGI_APPLICATION = 'restaurant_reservation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
-        'NAME': 'your-db-name',
+        'NAME': 'pysquad-reservation-system',
     }
 }
 

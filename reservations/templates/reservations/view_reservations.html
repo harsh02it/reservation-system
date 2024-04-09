@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>View Reservations</title>
+  </head>
+  <body>
+    <h1>Reservations</h1>
+    <ul>
+      {% for reservation in reservations %}
+      <li>{{ reservation.name }} - {{ reservation.date }}</li>
+      {% empty %}
+      <li>No reservations.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
