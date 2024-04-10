@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -11,8 +12,26 @@
   <body>
     <h1>Make a Reservation</h1>
     <form method="post">
-      {% csrf_token %} {{ form.as_p }}
-      <button type="submit">Make Reservation</button>
+      {% csrf_token %}
+      <label for="customer">Customer:</label><br />
+      <input type="text" id="customer" name="customer" /><br />
+      <label for="table">Table:</label><br />
+      <input type="text" id="table" name="table" /><br />
+      <label for="reservation_time">Reservation Time:</label><br />
+      <input
+        type="datetime-local"
+        id="reservation_time"
+        name="reservation_time"
+      /><br />
+      <label for="number_of_people">Number of People:</label><br />
+      <input
+        type="number"
+        id="number_of_people"
+        name="number_of_people"
+      /><br />
+      <label for="status">Status:</label><br />
+      <input type="text" id="status" name="status" /><br />
+      <input type="submit" value="Submit" />
     </form>
   </body>
 </html>
