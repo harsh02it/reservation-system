@@ -5,9 +5,16 @@
   </head>
   <body>
     <h1>Reservations</h1>
+    <p>{{ db_status }}</p>
     <ul>
-      {% for reservation in reservations %}
-      <li>{{ reservation.name }} - {{ reservation.date }}</li>
+      {% for reservation in mongo_reservations %}
+      <li>
+        <p>Customer: {{ reservation.customer }}</p>
+        <p>Table: {{ reservation.table }}</p>
+        <p>Reservation Time: {{ reservation.reservation_time }}</p>
+        <p>Number of People: {{ reservation.number_of_people }}</p>
+        <p>Status: {{ reservation.status }}</p>
+      </li>
       {% empty %}
       <li>No reservations.</li>
       {% endfor %}

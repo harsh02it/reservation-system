@@ -4,6 +4,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = 'your-secret-key'
 
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -51,7 +53,12 @@ WSGI_APPLICATION = 'restaurant_reservation.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': False,
         'NAME': 'pysquad-reservation-system',
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 21017,
+        }
     }
 }
 
