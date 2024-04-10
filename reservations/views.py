@@ -5,8 +5,6 @@ from django.http import HttpResponse
 from reservations.models import Reservation
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
-from pymongo import MongoClient
-from pymongo.errors import ConnectionFailure
 from django.http import HttpResponseRedirect
 
 def home(request):
@@ -72,7 +70,7 @@ def view_reservations(request):
 
         # Fetch reservations from MongoDB (assuming a collection named 'reservations')
         mongo_reservations = list(client['pysquad-reservation-system']['Reservation'].find({}))
-        
+
         # (Optional) Process or combine data from MongoDB if needed
     except ConnectionFailure:
         db_status = "MongoDB connection failed"
